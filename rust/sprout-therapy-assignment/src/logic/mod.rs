@@ -1,14 +1,14 @@
 use crate::schema::{Request, LogicalPath};
 
-pub fn base(data: &Request) -> Result<LogicalPath, String>  {
+pub fn base(data: &Request) -> Option<LogicalPath>  {
     if data.A && data.B && !data.C {
-        Ok(LogicalPath::M)
+        Some(LogicalPath::M)
     } else if data.A && data.B && data.C {
-        Ok(LogicalPath::P)
+        Some(LogicalPath::P)
     } else if !data.A && data.B && data.C {
-        Ok(LogicalPath::T)
+        Some(LogicalPath::T)
     } else {
-        Err("No logical variation found".to_string())
+        None
     }
 }
 
@@ -38,7 +38,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Ok(LogicalPath::P));
+        assert_eq!(result, Some(LogicalPath::P));
     }
 
     #[test]
@@ -54,7 +54,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Ok(LogicalPath::T));
+        assert_eq!(result, Some(LogicalPath::T));
     }
 
     #[test]
@@ -70,7 +70,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Ok(LogicalPath::M));
+        assert_eq!(result, Some(LogicalPath::M));
     }
 
     #[test]
@@ -86,7 +86,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Err("No logical variation found".to_string()));
+        assert_eq!(result, None);
     }
 
     #[test]
@@ -102,7 +102,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Err("No logical variation found".to_string()));
+        assert_eq!(result, None);
     }
 
     #[test]
@@ -118,7 +118,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Err("No logical variation found".to_string()));
+        assert_eq!(result, None);
     }
 
     #[test]
@@ -134,7 +134,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Err("No logical variation found".to_string()));
+        assert_eq!(result, None);
     }
 
     #[test]
@@ -150,7 +150,7 @@ mod test_base {
 
         let result = base(&data);
 
-        assert_eq!(result, Err("No logical variation found".to_string()));
+        assert_eq!(result, None);
     }
 }
 

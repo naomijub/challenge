@@ -21,7 +21,7 @@ pub async fn readiness() -> impl Responder {
 
 pub async fn data_handler(payload: web::Json<Request>) -> impl Responder {
     let data: Request = payload.into_inner();
-    if let Ok(base_logical_path) = base(&data) {
+    if let Some(base_logical_path) = base(&data) {
         let base_k_value = base_k(&base_logical_path, &data);
 
         let response = Response::new(base_logical_path, base_k_value);

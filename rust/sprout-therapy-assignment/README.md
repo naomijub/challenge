@@ -1,6 +1,10 @@
 # About
 This project uses Rust with Actix and Bastion and it is organized with some clean architecture ideas as it is market standard. Actix is the current benchmark for Rust WebDevelopment alongside Rocket and my preferred framework. Bastion is a supervisor like system that helps your system become more fault tolerant as it restarts your system when crashes occur. For logging I am using `actix_web::middleware::Logger`, `log` and `env-Logger` with the log format being `"IP:%a DATETIME:%t REQUEST:\"%r\" STATUS: %s DURATION:%D X-REQUEST-ID:%{x-request-id}o"`. Basic log level is `INFO`. Parameter are self explanatory while `x-request-id` is created by `actix_web::middleware::DefaultHeaders` as being a simple `UUID`, this helps track requests when a monitoring system is available.
 
+## Decisions
+- The system is designed to be the most robust possible
+- Due to the lack of information on the behaviours of `custom 1` and `custom 2` I did not implement it and would discuss it with my team to find the best possible solutions.
+
 ## Running the code
 
 For docker:
