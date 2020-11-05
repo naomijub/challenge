@@ -6,9 +6,8 @@ use uuid::Uuid;
 
 mod config;
 mod controller;
-
-#[cfg(test)]
-mod tests;
+mod schema;
+mod logic;
 
 use config::routes::app_routes;
 

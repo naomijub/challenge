@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: cargo run --release
+    ports:
+      - "4000:4000"
+      
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: cargo test
+

@@ -1,9 +1,11 @@
-use crate::config::routes::app_routes;
+use sprout_therapy_assignment::config::routes::app_routes;
 
 use actix_service::Service;
 use actix_web::{http::StatusCode, test, App};
 use bytes::Bytes;
 use env_logger;
+
+mod data;
 
 #[actix_rt::test]
 async fn test_ping_pong() {
