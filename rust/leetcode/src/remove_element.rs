@@ -9,7 +9,7 @@ pub fn remove_element_fp(nums: &mut Vec<i32>, val: i32) -> i32 {
             if nums[i] == val {
                 (count, index_to_swap + 1)
             } else {
-                nums[i - index_to_swap] = nums[i];
+                nums.swap(i - index_to_swap, i);
                 (count + 1, index_to_swap)
             }
         })
