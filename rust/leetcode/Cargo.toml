@@ -16,6 +16,10 @@ criterion = "0.4"
 # name = "easy_binary_search"
 # harness = false
 
+# [[bench]]
+# name = "max_profit"
+# harness = false
+
 [[bench]]
-name = "max_profit"
+name = "remove"
 harness = false
