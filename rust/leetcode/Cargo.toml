@@ -20,6 +20,10 @@ criterion = "0.4"
 # name = "max_profit"
 # harness = false
 
+# [[bench]]
+# name = "remove"
+# harness = false
+
 [[bench]]
-name = "remove"
+name = "remove_duplicates"
 harness = false
