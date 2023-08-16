@@ -24,6 +24,10 @@ criterion = "0.4"
 # name = "remove"
 # harness = false
 
+# [[bench]]
+# name = "remove_duplicates"
+# harness = false
+
 [[bench]]
-name = "remove_duplicates"
+name = "rotate"
 harness = false

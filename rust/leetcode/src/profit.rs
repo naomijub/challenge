@@ -42,3 +42,31 @@ fn test_6() {
     let nums = vec![1, 2, 4];
     assert_eq!(max_profit(nums), 3);
 }
+
+pub fn max_profit_multiple(prices: Vec<i32>) -> i32 {
+    prices
+        .windows(2)
+        .filter(|p| p[0] < p[1])
+        .map(|p| p[1] - p[0])
+        .sum()
+    // .map(|x| 0.max(x[1] - x[0]))
+    // .sum()
+}
+
+#[test]
+fn test_mult_1() {
+    let nums = vec![7, 1, 5, 3, 4, 6, 4];
+    assert_eq!(max_profit_multiple(nums), 7);
+}
+
+#[test]
+fn test_mult_2() {
+    let nums = vec![7, 6, 4, 3, 1];
+    assert_eq!(max_profit_multiple(nums), 0);
+}
+
+#[test]
+fn test_mult_3() {
+    let nums = vec![1, 2, 3, 4, 5];
+    assert_eq!(max_profit_multiple(nums), 4);
+}
