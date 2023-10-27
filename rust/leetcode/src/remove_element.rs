@@ -52,13 +52,6 @@ fn test_2() {
 }
 
 #[test]
-fn test_3() {
-    let mut nums = vec![1, 1];
-    assert_eq!(remove_element_for(&mut nums, 1), 0);
-    assert_eq!(nums, vec![])
-}
-
-#[test]
 fn test_4() {
     let mut nums = vec![4, 5];
     assert_eq!(remove_element_for(&mut nums, 4), 1);

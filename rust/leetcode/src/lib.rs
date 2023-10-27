@@ -1,8 +1,9 @@
 pub mod binary_search;
+pub mod is_subseq;
 pub mod majority;
 pub mod palindrome;
 pub mod profit;
 pub mod remove_duplicates;
 pub mod remove_element;
-
 pub mod rotate;
+pub mod merge_sorted_array;
